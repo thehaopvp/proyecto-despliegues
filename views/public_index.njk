@@ -1,0 +1,50 @@
+{% extends "public_base.njk" %} 
+
+{% block titulo %} peliculas | listados  {% endblock%}
+
+
+{% block contenido %}
+    <h1>Listado peliculas</h1>
+    <div>        
+       
+
+  <form action="/buscar" method="get">
+ <div class="form-group">
+  <input type="text" class="form-control" name="buscar" 
+ placeholder="Titulo del pelicula a buscar..." >
+ <button type="submit" class="btn btn-primary"> Buscar
+ </button>
+ </div
+ 
+ </form>
+ {% if peliculas %} 
+
+ <div>
+  <ul class="list-group">
+    {% for pelicula in peliculas %}
+      <li class="list-group-item"  > Titulo : {{ pelicula.titulo }}
+      </li>
+      <li class="list-group-item" > Sipnosis : {{ pelicula.sipnosis}}
+      </li>
+      <li class="list-group-item" > Duracion  : {{ pelicula.duracion}}
+      </li>
+      <li class="list-group-item"  > Genero : {{ pelicula.genero }}
+      </li>
+      <li class="list-group-item" > Imagen :  <img src="/public/uploads/{{pelicula.imagen}}">
+      </li>
+      <li class="list-group-item" > Valoracion  : {{ pelicula.valoracion}}
+      </li>
+      <li class="list-group-item"  > Plataforma : {{ pelicula.plataforma}}
+      </li>
+      <li class="list-group-item" > Director : {{ pelicula.director}}
+        {% endfor %}
+  </ul>
+
+</div>   
+{% endif %}
+     
+ 
+</div>
+
+{% endblock%}  
+

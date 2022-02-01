@@ -1,0 +1,59 @@
+{% extends "admin_base.njk" %} 
+
+{% block titulo %} pelicula | nueva  {% endblock%}
+
+{% block contenido %}
+
+<h1>Inserción de pelicula</h1>
+ <form action="/peliculas" method="post" enctype="multipart/form-data">
+ <div class="form-group">
+ <label for="titulo">Titulo:</label>
+ <input type="text" class="form-control" name="titulo"
+ placeholder="Titulo del pelicula..." />
+ </div>
+ <div class="form-group">
+ <label for="sipnosis"> Sipnosis </label>
+ <input type="text"  class="form-control" name="sipnosis"
+ placeholder=" sipnosis del pelicula..." />
+ </div>
+ <div class="form-group">
+ <label for=" duracion"> Duracion</label>
+ <input type="number"  class="form-control" name="duracion"
+ placeholder=" duracion del pelicula..." />
+ </div>
+ <div class="form-group">
+ <label for="genero"> Genero</label>
+ <input type="text"  class="form-control" name="genero"
+ placeholder="genero del pelicula..." />
+ </div>
+ <div class="form-group">
+ <label for="imagen"> Imagen</label>
+ <input type="file"  class="form-control" name="imagen"
+ placeholder="imagen  del pelicula..." />
+ </div>
+ <div class="form-group">
+ <label for="valoracion"> Valoracion</label>
+ <input type="text"  class="form-control" name="valoracion"
+ placeholder="valoracion del pelicula..." />
+ </div>
+ <div class="form-group">
+ <label for="nombreplataforma"> nombreplataforma </label>
+ <input type="text"  class="form-control" name="nombreplataforma"
+ placeholder=" Nombre de la plataforma de la pelicula..." />
+ </div>
+  <div class="form-group">
+ <label for="dataplataforma"> dataplataforma</label>
+ <input type="date"  class="form-control" name="dataplataforma"
+ placeholder=" Data de la plataforma de la pelicula..." />
+ </div>
+ <div class="form-group">
+ <label for="director">Director:</label>
+ <input type="text" class="form-control" name="director"
+ placeholder="director del pelicula..." />
+ </div>
+ <button type="submit" class="btn btn-primary">
+ Enviar
+ </button>
+ </form>
+
+{% endblock%} 

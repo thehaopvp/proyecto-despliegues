@@ -1,0 +1,24 @@
+{% extends "admin_base.njk" %} 
+
+{% block titulo %} peliculas | listados  {% endblock%}
+
+
+{% block contenido %}
+    <h1>Listado peliculas</h1>
+    <div>        
+        <ul class="list-group">
+             {% for pelicula in peliculas %}
+ 
+          <li class="list-group-item"> {{pelicula.titulo}} <a href="peliculas/{{pelicula.id}}">  <button type="button" class="btn btn-success" > ver ficha </button> </a>
+            <form action="peliculas/{{ pelicula.id }}" method="post">
+                <input type="hidden" name="_method" value="delete" />
+                    <button type="submit" class="btn btn-danger">  Borrar </button>
+            </form> </li> 
+            
+    
+        </ul>
+        
+ {% endfor %}
+</div>
+
+{% endblock%}  

@@ -1,0 +1,25 @@
+{% extends "admin_base.njk" %} 
+
+{% block titulo %} contactos | listados  {% endblock%}
+
+{% block contenido %}
+ <h1>Detalle pelicula</h1>
+    <div>
+        <ul class="list-group">
+            <li class="list-group-item"  > Titulo : {{ pelicula.titulo }}
+            </li>
+            <li class="list-group-item" > Sipnosis : {{ pelicula.sipnosis}}
+            </li>
+            <li class="list-group-item" > Duracion  : {{ pelicula.duracion}}
+            </li>
+            <li class="list-group-item"  > Genero : {{ pelicula.genero }}
+            </li>
+            <img src="/public/uploads/{{pelicula.imagen}}" width="30%">
+            <li class="list-group-item" > Valoracion  : {{ pelicula.valoracion}}
+            </li>
+            <li class="list-group-item"  > Plataforma : {{ pelicula.plataforma}}
+            </li>
+            <li class="list-group-item" > Director : {{ pelicula.director}}
+        </ul>
+    </div>
+{% endblock%}  
